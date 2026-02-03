@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Museo+Sans+Rounded:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/main.js" defer></script>
+    <title>Online Clothes Store</title>
+</head>
+<body>
+    <!-- Pre-loader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <h2>Online Clothes Store</h2>
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="menu-left">
+                <ul>
+                    <li><a href="shop.html">Collections</a></li>
+                    <li><a href="shop.html">Bébés</a></li>  
+                    <li><a href="shop.html">Enfants</a></li>
+                    <li><a href="shop.html">Promotions</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <h1>Online Clothes Store</h1>
+            </div>
+            <div class="menu-right">
+                <a href="#" class="connexion-link">Connexion</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100087234409241" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/spectrecoding" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/spectrecoding/" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#">Nouveautés</a></li>
+                <li><a href="#">Bébés</a></li>
+                <li><a href="#">Enfants</a></li>
+                <li><a href="#">Promotions</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Connexion</a></li>
+            </ul>
+            <div class="mobile-social">
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-left" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="assets/img/hero-1.jpg" alt="Collection Neutrals">
+                    <div class="hero-text-overlay">
+                        <h2>LA COLLECTION</h2>
+                        <h2>NEUTRALS</h2>
+                    </div>
+                </div>
+                <div class="hero-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="assets/img/hero-2.jpg" alt="Collection Neutrals">
+                    <button class="cta-button">Voir la collection Neutrals</button> 
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Produits -->
+        <section class="products-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="products-grid">
+                <div class="product-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="product-image">
+                        <img src="assets/img/Stocksy_comp_3824406.webp" alt="T-shirt Miami">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">T-shirt Miami</h3>
+                        <p class="product-price">55 000 FC</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="product-image">
+                        <img src="assets/img/product-2.webp" alt="T-shirt Fresh">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">T-shirt Fresh</h3>
+                        <p class="product-price">48 000 FC</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="product-image">
+                        <img src="assets/img/product-3.webp" alt="Robe Arlie">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Robe Arlie</h3>
+                        <p class="product-price">88 000 FC</p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                    <div class="product-image">
+                        <span class="promo-badge">PROMO</span>
+                        <img src="assets/img/product-4.webp" alt="Robe Marisol">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Robe Marisol</h3>
+                        <p class="product-price">
+                            <span class="current-price">88 000 FC</span>
+                            <span class="old-price">132 000 FC</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+                    <div class="product-image">
+                        <span class="promo-badge">PROMO</span>
+                        <img src="assets/img/product-5.webp" alt="Ensemble Tie Dye">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ensemble Tie Dye</h3>
+                        <p class="product-price">
+                            <span class="current-price">92 000 FC</span>
+                            <span class="old-price">110 000 FC</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Catégories -->
+        <section class="categories-section">
+            <div class="category-card" data-aos="fade-right" data-aos-duration="800">
+                <img src="assets/img/hero-1.jpg" alt="Bébés">
+                <button class="category-button">Bébés</button>
+            </div>
+            <div class="category-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <img src="assets/img/hero-2.jpg" alt="Enfants">
+                <button class="category-button">Enfants</button>
+            </div>
+        </section>
+
+        <!-- Section Banner Lifestyle -->
+        <section class="lifestyle-banner" data-aos="fade" data-aos-duration="1000">
+            <img src="assets/img/lifestyle.jpg" alt="Lifestyle">
+        </section>
+
+        <!-- Section Nouveautés -->
+        <section class="new-arrivals-section">
+            <div class="new-arrivals-container">
+                <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">NOUVEAUTÉS</h2>
+                <div class="new-arrivals-grid">
+                    <div class="product-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+                        <div class="product-image">
+                            <span class="promo-badge">PROMO</span>
+                            <img src="assets/img/product-5.webp" alt="T-shirt Mac">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">T-shirt Mac</h3>
+                            <p class="product-price">Prix à découvrir</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+                        <div class="product-image">
+                            <img src="assets/img/product-4.webp" alt="Ensemble Neutral">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Ensemble Neutral</h3>
+                            <p class="product-price">220 000 FC</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+                        <div class="product-image">
+                            <img src="assets/img/Stocksy_comp_3824406.webp" alt="T-shirt Miami">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">T-shirt Miami</h3>
+                            <p class="product-price">110 000 FC</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="new-arrivals-button" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">Voir les nouveautés</button>
+            </div>
+        </section>
+
+        <!-- Section Qui sommes-nous -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="800">
+                    <img src="assets/img/about-us.jpeg" alt="Qui sommes-nous">
+                </div>
+                <div class="about-content" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <h2 class="about-title">QUI SOMMES-NOUS ?</h2>
+                    <p class="about-text">Tout commence par une idée. Peut-être voulez-vous créer une entreprise. Peut-être voulez-vous donner une nouvelle dimension à un passe-temps. Ou peut-être avez-vous un projet créatif que vous souhaitez partager avec le monde entier. Quel que soit le cas, la façon dont vous racontez votre histoire en ligne peut faire toute la différence.</p>
+                    <button class="about-button">Notre histoire</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Matériaux écologiques -->
+        <section class="materials-section">
+            <div class="materials-container">
+                <div class="materials-content" data-aos="fade-right" data-aos-duration="800">
+                    <h2 class="materials-title">MATÉRIAUX ÉCOLOGIQUES</h2>
+                    <p class="materials-text">Tout commence par une idée. Peut-être voulez-vous créer une entreprise. Peut-être voulez-vous donner une nouvelle dimension à un passe-temps. Ou peut-être avez-vous un projet créatif que vous souhaitez partager avec le monde entier. Quel que soit le cas, la façon dont vous racontez votre histoire en ligne peut faire toute la différence.</p>
+                    <button class="materials-button">En savoir plus</button>
+                </div>
+                <div class="materials-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <img src="assets/img/about-us-2.jpeg" alt="Matériaux écologiques">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos Partenaires -->
+        <section class="partners-section">
+            <div class="partners-container">
+                <h2 class="partners-title" data-aos="fade-up" data-aos-duration="800">NOS PARTENAIRES</h2>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png" alt="Nike">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png" alt="Adidas">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/05/Zara-Logo.png" alt="Zara">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/04/Chanel-Logo.png" alt="Chanel">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png" alt="Loreal">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://logos-world.net/wp-content/uploads/2020/04/Louis-Vuitton-Logo.png" alt="Louis Vuitton">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Newsletter -->
+        <section class="newsletter-section">
+            <div class="newsletter-background">
+                <img src="https://images.squarespace-cdn.com/content/v1/62c45cf6b1b15b19512fcaaf/1657036049168-MGS6U5OY07N2B448HKG2/Stocksy_comp_3401457.jpg" alt="Newsletter background">
+            </div>
+            <div class="newsletter-container">
+                <div class="newsletter-content" data-aos="fade-up" data-aos-duration="1000">
+                    <h2 class="newsletter-title">NE MANQUEZ RIEN.</h2>
+                    <p class="newsletter-subtitle">Recevez des informations sur les nouvelles collections, les promotions et plus encore.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Adresse e-mail" required>
+                        <button type="submit" class="newsletter-button">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">Online Clothes Store</h3>
+                <p class="footer-credit">Conçu par <span class="footer-link">spectrecoding</span></p>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-title">À propos de Online Clothes Store</h4>
+                <ul class="footer-links">
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 class="footer-title">En savoir plus</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Envois et retours</a></li>
+                    <li><a href="#">Guide des tailles</a></li>
+                    <li><a href="#">Carte-cadeau</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
