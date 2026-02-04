@@ -27,35 +27,62 @@ if (document.readyState === 'complete') {
     });
 }
 
-// Menu hamburger
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const body = document.body;
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    body.classList.toggle('menu-open');
-});
-
-// Fermer le menu en cliquant sur un lien
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-    });
-});
-
-// Fermer le menu en cliquant en dehors
-document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        body.classList.remove('menu-open');
+// Menu hamburger - Approche CSS pur avec checkbox (inspiré de https://christiantietze.de/posts/2025/01/responsive-scalable-hamburger-menu-accessible-css/)
+(function() {
+    'use strict';
+    
+    function initMobileMenu() {
+        const nav = document.getElementById('navigation');
+        const hamburger = document.getElementById('hamburger-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (!nav || !hamburger || !mobileMenu) return;
+        
+        // Mise à jour des attributs ARIA et de l'affichage du menu
+        const updateHamburgerARIA = () => {
+            hamburger.setAttribute('aria-expanded', hamburger.checked ? 'true' : 'false');
+            mobileMenu.setAttribute('aria-hidden', !hamburger.checked ? 'true' : 'false');
+            if (hamburger.checked) {
+                mobileMenu.classList.add('active');
+                document.body.classList.add('menu-open');
+            } else {
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        };
+        
+        // Écouter les changements du checkbox
+        hamburger.addEventListener('change', updateHamburgerARIA);
+        
+        // Fermer en cliquant en dehors du menu
+        window.addEventListener('click', (event) => {
+            const eventPath = event.composedPath();
+            const isTargeted = eventPath.includes(nav);
+            if (!isTargeted && hamburger.checked) {
+                hamburger.checked = false;
+                updateHamburgerARIA();
+            }
+        });
+        
+        // Fermer en cliquant sur les liens du menu
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.checked = false;
+                updateHamburgerARIA();
+            });
+        });
+        
+        // Initialisation
+        updateHamburgerARIA();
     }
-});
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
 
 // Barre de recherche de produits
 if (document.getElementById('product-search')) {

@@ -76,7 +76,7 @@ header {
     z-index: 100;
     width: 100%;
     padding: 20px 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 body:not(.shop-page):not(.shop-detail-page):not(.about-page) header {
@@ -133,43 +133,72 @@ body:not(.shop-page):not(.shop-detail-page):not(.about-page) header::before {
     position: relative;
 }
 
-/* Menu Hamburger */
+/* Menu Hamburger - Approche CSS pur avec checkbox */
+:root {
+    --hamburger-slice-color: #fff;
+    --hamburger-size: clamp(24px, 5vw, 32px);
+}
+
+.navbar {
+    position: relative;
+}
+
+#hamburger-toggle {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1003;
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    margin: 0;
+    padding: 0;
+}
+
 .hamburger {
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
+    width: var(--hamburger-size);
+    height: var(--hamburger-size);
+    padding: 0.5rem;
     cursor: pointer;
-    padding: 0;
-    z-index: 1001;
+    box-sizing: content-box;
+    position: relative;
+    z-index: 1002;
 }
 
-.hamburger span {
+.hamburger .slice {
+    --slice-height: 3px;
+    display: block;
+    position: relative;
     width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 3px;
+    height: var(--slice-height);
+    border-radius: var(--slice-height);
     transition: all 0.3s ease;
-    transform-origin: center;
+    background-color: var(--hamburger-slice-color);
+    opacity: 0.9;
+    margin-top: calc(33% - var(--slice-height));
+    top: calc((33% - var(--slice-height)) / -2);
 }
 
-.shop-page .hamburger span {
-    background: #333;
+.shop-page .hamburger .slice,
+.shop-detail-page .hamburger .slice {
+    background-color: #333;
 }
 
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+/* Animation en X quand le menu est ouvert */
+#hamburger-toggle:checked ~ .hamburger .slice:nth-child(1) {
+    top: calc(50% - 33% + var(--slice-height) / 2);
+    transform: rotate(45deg);
+    background-color: #fff !important;
 }
 
-.hamburger.active span:nth-child(2) {
+#hamburger-toggle:checked ~ .hamburger .slice:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+#hamburger-toggle:checked ~ .hamburger .slice:nth-child(3) {
+    top: calc(-50% + var(--slice-height) / 2);
+    transform: rotate(-45deg);
+    background-color: #fff !important;
 }
 
 /* Menu mobile */
@@ -189,6 +218,7 @@ body:not(.shop-page):not(.shop-detail-page):not(.about-page) header::before {
 }
 
 .mobile-menu.active {
+    display: block;
     transform: translateX(0);
 }
 
@@ -1610,12 +1640,46 @@ main {
 }
 
 @media (max-width: 768px) {
+    header {
+        position: relative;
+        z-index: 100;
+    }
+    
     .navbar {
         padding: 15px 20px;
+        position: relative;
+        z-index: 100;
+    }
+    
+    #hamburger-toggle {
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 1003 !important;
+        width: 40px !important;
+        height: 40px !important;
     }
     
     .hamburger {
-        display: flex;
+        display: block !important;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 1002 !important;
+    }
+    
+    .shop-page header,
+    .shop-detail-page header,
+    .about-page header {
+        position: relative;
+        z-index: 100;
+    }
+    
+    .shop-page .navbar,
+    .shop-detail-page .navbar,
+    .about-page .navbar {
+        position: relative;
+        z-index: 100;
     }
     
     .menu-left {

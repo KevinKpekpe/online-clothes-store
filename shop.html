@@ -27,12 +27,13 @@
     </div>
 
     <header>
-        <nav class="navbar">
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <nav class="navbar" id="navigation">
+            <input type="checkbox" id="hamburger-toggle" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false" />
+            <label for="hamburger-toggle" class="hamburger" aria-hidden="true">
+                <span class="slice"></span>
+                <span class="slice"></span>
+                <span class="slice"></span>
+            </label>
             <div class="menu-left">
                 <ul>
                     <li><a href="index.html">Nouveautés</a></li>
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </nav>
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu">
             <ul>
                 <li><a href="index.html">Nouveautés</a></li>
                 <li><a href="shop.html">Bébés</a></li>
